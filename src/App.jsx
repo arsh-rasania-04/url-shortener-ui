@@ -15,7 +15,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5001/api/shorten', {
+      await fetch('https://url-shortener-api-kppm.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ originalUrl }),
@@ -24,7 +24,7 @@ function App() {
       if (!response.ok) throw new Error('Invalid URL format');
 
       const data = await response.json();
-      setShortUrl(`http://localhost:5001/${data.urlCode}`);
+      setShortUrl(`https://url-shortener-api-kppm.onrender.com/${data.urlCode}`);
       setOriginalUrl(''); 
     } catch (err) {
       setError(err.message);
