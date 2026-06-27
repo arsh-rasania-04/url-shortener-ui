@@ -15,7 +15,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      // 1. Added "const response =" and appended "/api/shorten"
+
       const response = await fetch('https://url-shortener-api-kppm.onrender.com/api/shorten', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
